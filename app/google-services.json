@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "942521280976",
+    "firebase_url": "https://supervendas2020-7294e.firebaseio.com",
+    "project_id": "supervendas2020-7294e",
+    "storage_bucket": "supervendas2020-7294e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:942521280976:android:19cce5025e1b710d5c31d5",
+        "android_client_info": {
+          "package_name": "com.example.supervendas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "942521280976-umh2ugi4oajslhrfdgufaig23smdm6kr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJPKtZ3bfjlswPjSF1xvHTXcfwgn-SFbg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "942521280976-umh2ugi4oajslhrfdgufaig23smdm6kr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
