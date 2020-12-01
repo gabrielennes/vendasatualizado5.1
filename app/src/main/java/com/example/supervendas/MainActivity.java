@@ -46,6 +46,14 @@ public class MainActivity extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         seguindo = new ArrayList<>();
 
+        b2.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent (MainActivity.this, ProdutoView.class);
+                startActivity( i );
+            }
+        } );
+
 
         b3.setOnClickListener( new View.OnClickListener() {
             @Override
@@ -54,14 +62,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity( i );
             }
         } );
-
         b1.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent( MainActivity.this , ProdutosActivity.class );
+                Intent i = new Intent(MainActivity.this,Produtos.class);
                 startActivity( i );
             }
         } );
+
 
     }
     @Override

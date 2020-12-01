@@ -13,10 +13,10 @@
         android:text="PRODUTOS"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.292"
+        app:layout_constraintHorizontal_bias="0.215"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.331" />
+        app:layout_constraintVertical_bias="0.334" />
 
     <Button
         android:id="@+id/btn2"
@@ -37,10 +37,10 @@
         android:text="VENDAS"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.292"
+        app:layout_constraintHorizontal_bias="0.215"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.616" />
+        app:layout_constraintVertical_bias="0.594" />
 
     <Button
         android:id="@+id/btn4"
@@ -49,10 +49,10 @@
         android:text="SAIR"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.79"
+        app:layout_constraintHorizontal_bias="0.765"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.616" />
+        app:layout_constraintVertical_bias="0.594" />
 
     <TextView
         android:id="@+id/ed1"
@@ -67,4 +67,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.171" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

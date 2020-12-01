@@ -23,10 +23,10 @@ public class VendasActivity extends AppCompatActivity {
         setContentView(R.layout.activity_vendas);
         ed1 = findViewById(R.id.edproduto);
         ed2 = findViewById(R.id.edquantidade);
-        b2 = findViewById(R.id.btncomprar);
-        b1 = findViewById(R.id.btncancelar);
+        b1 = findViewById(R.id.btncomprar);
+        b2 = findViewById(R.id.btncancelar);
 
-        b2.setOnClickListener(new View.OnClickListener() {
+        b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(VendasActivity.this,MainActivity.class);
@@ -34,7 +34,7 @@ public class VendasActivity extends AppCompatActivity {
             }
         });
 
-        b1.setOnClickListener(new View.OnClickListener() {
+        b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 insert();
