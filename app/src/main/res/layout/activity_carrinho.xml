@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation ="vertical"
     android:gravity="center"
-    tools:context=".VendasActivity">
+    tools:context=".CarrinhoActivity">
 
     <ListView
         android:id="@+id/lst1"

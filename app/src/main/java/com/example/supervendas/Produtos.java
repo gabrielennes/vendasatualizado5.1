@@ -13,7 +13,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class Produtos extends AppCompatActivity {
-    EditText ed1,ed2;
+    EditText ed1,ed2,ed3;
     Button b1,b2;
 
     @Override
@@ -23,6 +23,7 @@ public class Produtos extends AppCompatActivity {
 
         ed1 = findViewById(R.id.produto);
         ed2 = findViewById(R.id.produtodesc);
+        ed3 = findViewById(R.id.produtopreco);
         b1 = findViewById(R.id.btn1);
         b2 = findViewById(R.id.btn2);
 

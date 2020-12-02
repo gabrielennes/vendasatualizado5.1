@@ -4,63 +4,72 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteStatement;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class VendasActivity extends AppCompatActivity {
 
-    EditText ed1,ed2;
-    Button b1,b2;
+    ListView lst1;
+    ArrayList<String> titles = new ArrayList<String>();
+    ArrayAdapter arrayAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_vendas);
-        ed1 = findViewById(R.id.edproduto);
-        ed2 = findViewById(R.id.edquantidade);
-        b1 = findViewById(R.id.btncomprar);
-        b2 = findViewById(R.id.btncancelar);
+        super.onCreate( savedInstanceState );
+        setContentView( R.layout.activity_vendas );
 
-        b1.setOnClickListener(new View.OnClickListener() {
+        lst1 = findViewById(R.id.lst1);
+        SQLiteDatabase db = openOrCreateDatabase("vendas", Context.MODE_PRIVATE, null);
+        final Cursor c = db.rawQuery("select * from produto", null);
+        int id = c.getColumnIndex("id");
+        int produto = c.getColumnIndex("produto" );
+        int prodesc = c.getColumnIndex("prodesc");
+
+        titles.clear();
+
+        arrayAdapter = new ArrayAdapter(this,R.layout.support_simple_spinner_dropdown_item,titles);
+
+        lst1.setAdapter(arrayAdapter);
+        final ArrayList<pro> prod = new ArrayList<pro>();
+
+        if(c.moveToNext()){
+            do {
+                pro pr = new pro();
+                pr.id =  c.getString( id );
+                pr.produto = c.getString( produto );
+                pr.des = c.getString( prodesc );
+                prod.add(pr);
+
+                titles.add(c.getString(id)+" \t"  +c.getString(produto)+" \t"  + c.getString(prodesc)+" \t");
+
+            }while(c.moveToNext());
+            arrayAdapter.notifyDataSetChanged();
+            lst1.invalidateViews();
+        }
+
+        lst1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent i = new Intent(VendasActivity.this,MainActivity.class);
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                String aaa = titles.get(position).toString();
+                pro pd = prod.get((position));
+                Intent i = new Intent(getApplicationContext(), VendasComprar.class);
+                i.putExtra("id",pd.id);
+                i.putExtra("produto",pd.produto);
+                i.putExtra("prodesc",pd.des);
+
                 startActivity(i);
             }
-        });
-
-        b2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                insert();
-                finish();
-            }
-        });
-    }
-
-    public void insert(){
-        try {
-            String edproduto = ed1.getText().toString();
-            String edquantidade = ed2.getText().toString();
-            SQLiteDatabase db = openOrCreateDatabase("venda", Context.MODE_PRIVATE,null);
-            db.execSQL("CREATE TABLE IF NOT EXISTS Vendas(id INTEGER PRIMARY KEY AUTOINCREMENT,edproduto VARCHAR,edquantidade VARCHAR)");
-
-            String sql = "insert into Vendas(edproduto, edquantidade)values(?,?)";
-            SQLiteStatement statement = db.compileStatement(sql);
-            statement.bindString(1,edproduto);
-            statement.bindString(2,edquantidade);
-            statement.execute();
-            Toast.makeText(this, "Venda concluida com sucesso!!", Toast.LENGTH_SHORT).show();
-            ed1.setText("");
-            ed2.setText("");
-            ed1.requestFocus();
-        }catch (Exception ex){
-            Toast.makeText(this, "Venda deu error!!", Toast.LENGTH_SHORT).show();
-        }
+        } );
     }
 }
