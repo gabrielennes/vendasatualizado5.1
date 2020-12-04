@@ -22,7 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    Button b1, b2, b3, b4, b5;
+    Button b1, b2, b3, b4, b5, b6;
 
 
 
@@ -34,8 +34,18 @@ public class MainActivity extends AppCompatActivity {
         b1 = findViewById( R.id.btn1 );
         b2 = findViewById( R.id.btn2 );
         b3 = findViewById( R.id.btn3 );
-        b4 = findViewById( R.id.btn4 );
         b5 = findViewById( R.id.btn5 );
+        b6 = findViewById( R.id.btn6 );
+
+
+        b6.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent (MainActivity.this,VendasView.class);
+                startActivity( i );
+            }
+        } );
+
 
 
         b5.setOnClickListener( new View.OnClickListener() {
@@ -45,14 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity( i );
             }
         } );
-
-        b4.setOnClickListener( new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent( MainActivity.this , CarrinhoActivity.class );
-                startActivity( i );
-            }
-        } );
+        
 
         b2.setOnClickListener( new View.OnClickListener() {
             @Override

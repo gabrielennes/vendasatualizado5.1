@@ -9,13 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Supervendas">
-        <activity android:name=".CarrinhoFinalizarActivity"></activity>
-        <activity android:name=".CarrinhoActivity" />
-        <activity android:name=".VendasComprar" />
+        <activity android:name=".VendasEditar" />
+        <activity android:name=".VendasView" />
+        <activity android:name=".VendasActivity" />
         <activity android:name=".ProdutosEditar" />
         <activity android:name=".ProdutoView" />
         <activity android:name=".Produtos" />
-        <activity android:name=".VendasActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".CadastroActivity" />
         <activity android:name=".LoginActivity">

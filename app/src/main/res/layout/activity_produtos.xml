@@ -60,25 +60,7 @@
             android:textAlignment="center" />
 
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Preco:"/>
-
-        <EditText
-            android:id="@+id/produtopreco"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:autoText="false"
-            android:ems="10"
-            android:inputType="none"
-            android:textAlignment="center" />
 
 
     <LinearLayout
@@ -105,5 +87,4 @@
     </LinearLayout>
 
 
-</LinearLayout>
 </LinearLayout>

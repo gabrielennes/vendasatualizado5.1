@@ -23,7 +23,6 @@ public class Produtos extends AppCompatActivity {
 
         ed1 = findViewById(R.id.produto);
         ed2 = findViewById(R.id.produtodesc);
-        ed3 = findViewById(R.id.produtopreco);
         b1 = findViewById(R.id.btn1);
         b2 = findViewById(R.id.btn2);
 
@@ -39,7 +38,9 @@ public class Produtos extends AppCompatActivity {
         b1.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent i = new Intent (Produtos.this,MainActivity.class);
                   insert();
+                  finish();
             }
         } );
     }
